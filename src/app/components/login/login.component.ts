@@ -19,6 +19,7 @@ export class LoginComponent {
     username: '1',
     password: '1'
   };
+  
   //Inyectar la información del servicio
   loginService: LoginService = inject(LoginService);
   constructor(){

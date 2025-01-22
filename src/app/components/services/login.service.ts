@@ -16,12 +16,11 @@ export class LoginService {
     password: 'passwordsss'
   };
 
-  
   getDataLogin(): Login {
     return this.Login;
   }
 
-  url = "https://sice.septlaxcala.gob.mx/PreRegistrationParents/studentData";
+  url = "http://localhost:3000/user";
   submitLogin(user: string, password: string){
     const data = {
       nacionalidad: 1,
@@ -29,16 +28,16 @@ export class LoginService {
     };
     
 
-    // return this.http.post<any>(this.url,data).subscribe({
-    //   next: (response: any) => {
-    //     console.log('Respuesta exitosa:', response);
-    //   },
-    //   error: (error: any) => {
-    //     console.error('Error al enviar los datos:', error);
-    //   },
-    //   complete: () => {
-    //     console.log('Solicitud completada.');
-    //   },
-    // })
+    return this.http.get<any>(this.url).subscribe({
+      next: (response: any) => {
+        console.log('Respuesta exitosa:', response);
+      },
+      error: (error: any) => {
+        console.error('Error al enviar los datos:', error);
+      },
+      complete: () => {
+        console.log('Solicitud completada.');
+      },
+    })
   }
 }
