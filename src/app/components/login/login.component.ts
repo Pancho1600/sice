@@ -4,8 +4,6 @@ import { Login } from "../interfaces/login";
 import { LoginService } from '../services/login.service'; 
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-HttpClient
 
 @Component({
   selector: 'app-login',
@@ -14,10 +12,10 @@ HttpClient
   styleUrl: './login.component.css'
 })
 export class LoginComponent { 
-  
+
   Login:Login = {
-    username: '1',
-    password: '1'
+    username: '',
+    password: ''
   };
   
   //Inyectar la información del servicio
@@ -27,7 +25,9 @@ export class LoginComponent {
   }
 
   formLogin = new FormGroup({
-    username: new FormControl(''),
+    username: new FormControl('',{
+      
+    }),
     password: new FormControl('')
   });
 
@@ -36,6 +36,8 @@ export class LoginComponent {
       this.formLogin.value.username ?? '',
       this.formLogin.value.password ?? ''
     );
+
+  
   }
 
 

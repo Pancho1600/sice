@@ -6,21 +6,21 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-  student: any[];
+  
   constructor(private http: HttpClient) { 
-    this.student = [];
+
   }
 
   Login:Login = {
-    username: 'userssDdD',
-    password: 'passwordsss'
+    username: '',
+    password: ''
   };
 
   getDataLogin(): Login {
     return this.Login;
   }
 
-  url = "http://localhost:3000/user";
+  url = "http://127.0.0.1:8000/api";
   submitLogin(user: string, password: string){
     const data = {
       nacionalidad: 1,
@@ -28,7 +28,7 @@ export class LoginService {
     };
     
 
-    return this.http.get<any>(this.url).subscribe({
+    return this.http.get<any>(`${this.url}/estudiantes/${10}`).subscribe({
       next: (response: any) => {
         console.log('Respuesta exitosa:', response);
       },

@@ -1,17 +1,19 @@
 <div class="container d-flex align-items-center justify-content-center vh-100">
     <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-      <h3 class="card-title text-center mb-4">Iniciar Sesión</h3>
+      <h3 class="card-title text-center mb-4">Iniciar Sesión {{Login.username}}</h3>
       <form [formGroup]="formLogin" (submit)="onSubmitLogin()">
 
         <div class="mb-3">
           <label for="username" class="form-label">Usuario</label>
-          <input type="text" id="username" name="username" formControlName="username" class="form-control" required placeholder="Ingresa tu usuario"/>
+          <input type="text" id="username" name="username" formControlName="username" 
+          class="form-control" required placeholder="Ingresa tu usuario"/>
         </div>
 
 
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" id="password" formControlName="password" name="password" class="form-control" required placeholder="Ingresa tu contraseña"/>
+          <input type="password" id="password" formControlName="password" name="password" 
+            class="form-control" required placeholder="Ingresa tu contraseña"/>
         </div>
   
 
